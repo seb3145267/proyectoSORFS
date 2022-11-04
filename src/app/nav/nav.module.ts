@@ -12,7 +12,6 @@ import { AppRoutingModule } from '../app-routing.module';
   imports: [
     CommonModule,
     AppRoutingModule
-    
   ],
   exports: [
     BarraComponent
