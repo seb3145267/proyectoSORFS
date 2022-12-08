@@ -1,0 +1,193 @@
+
+<h1>Héroe <small>Nombre del Héroe</small> </h1>
+<hr>
+
+
+<div class="row text-right">
+  <div class="col">
+    <button class="btn btn-danger"
+            routerLink="/heroes">
+      <i class="fa fa-arrow-left"></i>
+      Regresar
+    </button>
+  </div>
+</div>
+
+
+
+<div class="row animated fadeIn faster">
+  <div class="col">
+
+    <form (ngSubmit)="guardar( f )"
+          #f="ngForm">
+
+      <div class="form-group">
+        <label>Firebase ID</label>
+        <input type="text"
+               class="form-control"
+               placeholder="Firebase ID"
+               [(ngModel)]="heroe.id"
+               name="id"
+               disabled="disabled">
+        <small class="form-text text-muted">Este campo es autogenerado</small>
+      </div>
+
+
+      <div class="form-group">
+          <label>Nombre</label>
+          <input type="text"
+                 class="form-control"
+                 placeholder="Nombre completo"
+                 [(ngModel)]="heroe.nombrecompleto"
+                 name="nombrecompleto"
+                 required>
+      </div>
+
+      <div class="form-group">
+          <label>Edad</label>
+          <input type="text"
+                 class="form-control"
+                 [(ngModel)]="heroe.edad"
+                 name="edad"
+                 placeholder="edad">
+      </div>
+
+      <div class="form-group">
+        <label>Genero</label>
+        <input type="text"
+               class="form-control"
+               [(ngModel)]="heroe.genero"
+               name="genero"
+               placeholder="genero">
+      </div>
+
+
+      <div class="form-group">
+        <label>Fecha de consulta</label>
+        <input type="text"
+               class="form-control"
+               [(ngModel)]="heroe.fechadeconsulta"
+               name="fechadeconsulta"
+               placeholder="fechadeconsulta">
+      </div>
+
+      <div class="form-group">
+        <label>Alergias</label>
+        <input type="text"
+               class="form-control"
+               [(ngModel)]="heroe.alergias"
+               name="alergias"
+               placeholder="alergias">
+      </div>
+
+      <div class="form-group">
+        <label>motivo de consulta</label>
+        <input type="text"
+               class="form-control"
+               [(ngModel)]="heroe.motivodeconsulta"
+               name="motivodeconsulta"
+               placeholder="motivodeconsulta">
+      </div>
+
+      <div class="form-group">
+        <label>diagnostico</label>
+        <input type="text"
+               class="form-control"
+               [(ngModel)]="heroe.diagnostico"
+               name="diagnostico"
+               placeholder="diagnostico">
+      </div>
+
+      <div class="form-group">
+        <label>conductasadictivas</label>
+        <input type="text"
+               class="form-control"
+               [(ngModel)]="heroe.conductasadictivas"
+               name="conductasadictivas"
+               placeholder="conductasadictivas">
+      </div>
+
+      <div class="form-group">
+        <label>problemasdesalud</label>
+        <input type="text"
+               class="form-control"
+               [(ngModel)]="heroe.problemasdesalud"
+               name="problemasdesalud"
+               placeholder="problemasdesalud">
+      </div>
+
+      <div class="form-group">
+        <label>codigodelmedicamento</label>
+        <input type="text"
+               class="form-control"
+               [(ngModel)]="heroe.codigodelmedicamento"
+               name="codigodelmedicamento"
+               placeholder="codigodelmedicamento">
+      </div>
+
+      <div class="form-group">
+        <label>nombredelmedicamento</label>
+        <input type="text"
+               class="form-control"
+               [(ngModel)]="heroe.nombredelmedicamento"
+               name="nombredelmedicamento"
+               placeholder="nombredelmedicamento">
+      </div>
+
+      <div class="form-group">
+        <label>dosis</label>
+        <input type="text"
+               class="form-control"
+               [(ngModel)]="heroe.dosis"
+               name="dosis"
+               placeholder="dosis">
+      </div>
+
+      <div class="form-group">
+        <label>duracionmedicamento</label>
+        <input type="text"
+               class="form-control"
+               [(ngModel)]="heroe.duraciondelmedicamento"
+               name="duraciondelmedicamento"
+               placeholder="duraciondelmedicamento">
+      </div>
+
+      <!-- <div class="form-group">
+        <label>Estado</label>
+        <br>
+
+        <button *ngIf="heroe.vivo" 
+                (click)="heroe.vivo = false"
+                class="btn btn-outline-success w-50" type="button">
+          <i class="fa fa-smile-wink"></i>
+          Vivo
+        </button>
+
+        <button *ngIf="!heroe.vivo" 
+                (click)="heroe.vivo = true"
+                class="btn btn-outline-danger w-50" type="button">
+            <i class="fa fa-dizzy"></i>
+            Muerto
+        </button>
+
+      </div> -->
+
+
+
+      <hr>
+      <div class="form-group text-center">
+        <button type="submit"
+                class="btn btn-primary w-25">
+          <i class="fa fa-save"></i>
+          Guardar
+        </button>
+      </div>
+
+
+    </form>
+
+
+  </div>
+</div>
+
+

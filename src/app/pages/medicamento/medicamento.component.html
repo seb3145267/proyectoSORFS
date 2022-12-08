@@ -1,0 +1,84 @@
+<div class="text-center">
+    <h2>Datos de los medicamentos</h2>
+    <h4 class="lead">Favor de llenar todos los campos sin excepcion</h4>
+  </div>
+  
+  
+  <div class="row text-right">
+    <div class="col">
+      <button class="btn btn-danger"
+              routerLink="/medicamentos">
+        <i class="fa fa-arrow-left"></i>
+        Regresar
+      </button>
+    </div>
+  </div>
+  
+  
+  <div class="container">
+    <div class="row container mt-4">
+  <div class="row">
+    <div class="d-flex justify-content-center py-2">
+        <main class="">
+            <form (ngSubmit)="guardar( f )" #f="ngForm">
+  
+                <div class="py-2 text-center">
+                    <h3>Medicamento</h3>
+                </div>
+  
+                <div class="row row-space">
+  
+                    <!-- SECCION 1 -->
+                    <div class="py-2 text-center">
+                        <p class="lead">Sección 1</p>
+                    </div>
+  
+                    <div class="form-group">
+                        <label>Firebase ID</label>
+                        <input type="text"
+                               class="form-control"
+                               placeholder="Firebase ID"
+                               [(ngModel)]="medicamento.id"
+                               name="id"
+                               disabled="disabled">
+                        <small class="form-text text-muted">Este campo es autogenerado</small>
+                      </div>
+                    
+  
+                    <!-- CODIGO -->
+                    <div class="col-6 py-2">
+                        <label for="" class="text-center">Codigo del medicamento</label>
+                        <input type="text" class="form-control" name="codigo" [(ngModel)]="medicamento.codigo" required>
+                    </div>
+  
+                    <!-- NOMBRE DEL MEDICAMENTO -->
+                    <div class="col-6 py-2">
+                        <label for="" class="text-center">Nombre del medicamento</label>
+                        <input type="text" class="form-control" name="NombreCompleto" [(ngModel)]="medicamento.nombremedicamento" placeholder="Escribe el nombre del medicamento" required>
+                    </div>
+  
+                    <!-- PRESENTACION -->
+                    <div class="col-6 py-2">
+                        <label for="" class="text-center">Presentacion</label>
+                        <input type="text" class="form-control" name="presentacion" [(ngModel)]="medicamento.presentacion" placeholder="Escribe la presentacion" required>
+                    </div>
+  
+                    <!-- GENERO -->
+                    <div class="col-6 py-2">
+                        <label for="" class="text-center">Precio</label>
+                        <input type="text" class="form-control" name="precio" [(ngModel)]="medicamento.precio" placeholder="Escribe el precio" required>
+                    </div>
+                    
+                    <hr class="my-4">
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary" style="width:50%">
+                           <i class="fa fa-save">Registrar</i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </main>
+    </div>
+  </div>
+  </div>
+  </div>

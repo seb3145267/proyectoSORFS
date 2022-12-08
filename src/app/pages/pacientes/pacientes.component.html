@@ -1,0 +1,90 @@
+<div class="text-center">
+  <h2>Lista de pacientes</h2>
+  <h4 class="lead">A continuación, se mostrará la lista de todos los pacientes registrados</h4>
+</div>
+
+<hr>
+
+
+<div class="row">
+  <div class="col text-center">
+    <button routerLink="/paciente/nuevo"
+            class="btn btn-primary">
+      <i class="fa fa-plus">Agregar</i>
+    </button>
+  </div>
+</div>
+
+
+<table *ngIf="!cargando && pacientes.length > 0"
+       class="table mt-2 animated fadeIn faster animated fadeIn faster">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre Completo</th>
+      <th scope="col">Edad</th>
+      <!-- <th scope="col">Genero</th> -->
+      <!-- <th scope="col">Alergias</th> -->
+      <th scope="col">Fecha de consulta</th>
+      <th scope="col">Motivo de consulta</th>
+      <th scope="col">Diagnostico</th>
+      <!-- <th scope="col">Conductas adictivas</th> -->
+      <!-- <th scope="col">Problemas de salud</th> -->
+      <!-- <th scope="col">Codigo del medicamento</th> -->
+      <th scope="col">Nombre del medicamento</th>
+      <th scope="col">Dosis</th>
+      <th scope="col">Duracion del Medicamento</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let paciente of pacientes; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ paciente.nombrecompleto }}</td>
+      <td>{{ paciente.edad }}</td>
+      <!-- <td>{{ paciente.genero }}</td> -->
+      <!-- <td>{{ paciente.alergias }}</td> -->
+      <td>{{ paciente.fechadeconsulta }}</td>
+      <td>{{ paciente.motivodeconsulta }}</td>
+      <td>{{ paciente.diagnostico }}</td>
+      <!-- <td>{{ paciente.conductasadictivas }}</td> -->
+      <!-- <td>{{ paciente.problemasdesalud }}</td> -->
+      <!-- <td>{{ paciente.codigodelmedicamento }}</td> -->
+      <td>{{ paciente.nombredelmedicamento }}</td>
+      <td>{{ paciente.dosis }}</td>
+      <td>{{ paciente.duraciondelmedicamento }}</td>
+      
+      <td>
+        <!-- EDITAR -->
+        <button class="btn btn-success mr-1"
+                [routerLink]="['/paciente', paciente.id ]">
+          <span class="material-icons" style="color:white;">&#xe3c9;</span>
+        </button>
+
+        <!-- BORRAR -->
+        <button class="btn btn-danger"
+                (click)="borrarPaciente( paciente, i ) ">
+          <span class="material-icons" style="color:white;">&#xe872;</span>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="!cargando && pacientes.length === 0"
+     class="alert alert-warning text-center mt-3 animated fadeIn faster">
+    <h4 class="alert-heading">No hay registros</h4>
+    <p>
+      <i class="fa fa-exclamation fa-2x"></i>
+    </p>
+</div>
+
+<div *ngIf="cargando" 
+     class="alert alert-info text-center mt-3 animated fadeIn faster">
+  <h4 class="alert-heading">Cargando</h4>
+  <p>
+    <i class="fa fa-sync-alt fa-spin fa-2x"></i>
+  </p>
+  <p class="mb-0">
+    Espere por favor
+  </p>
+</div>

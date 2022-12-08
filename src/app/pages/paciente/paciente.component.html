@@ -1,0 +1,160 @@
+<div class="text-center">
+  <h2>Datos de la consulta</h2>
+  <h4 class="lead">Favor de llenar todos los campos sin excepcion</h4>
+</div>
+
+
+<div class="row text-right">
+  <div class="col">
+    <button class="btn btn-danger"
+            routerLink="/heroes">
+      <i class="fa fa-arrow-left"></i>
+      Regresar
+    </button>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row container mt-4">
+<div class="row">
+  <div class="d-flex justify-content-center py-2">
+      <main class="">
+          <form (ngSubmit)="guardar( f )" #f="ngForm">
+
+              <div class="py-2 text-center">
+                  <h3>Paciente</h3>
+              </div>
+
+              <div class="row row-space">
+
+                  <!-- SECCION 1 -->
+                  <div class="py-2 text-center">
+                      <p class="lead">Sección 1</p>
+                  </div>
+
+                  <div class="form-group">
+                      <label>Firebase ID</label>
+                      <input type="text"
+                             class="form-control"
+                             placeholder="Firebase ID"
+                             [(ngModel)]="paciente.id"
+                             name="id"
+                             disabled="disabled">
+                      <small class="form-text text-muted">Este campo es autogenerado</small>
+                    </div>
+                  
+
+                  <!-- FECHA DE CONSULTA -->
+                  <div class="col-6 py-2">
+                      <label for="" class="text-center">Fecha de consulta</label>
+                      <input type="text" class="form-control" name="FechaDeConsulta" [(ngModel)]="paciente.fechadeconsulta" required>
+                  </div>
+
+                  <!-- NOMBRE COMPLETO -->
+                  <div class="col-6 py-2">
+                      <label for="" class="text-center">Nombre completo</label>
+                      <input type="text" class="form-control" name="NombreCompleto" [(ngModel)]="paciente.nombrecompleto" placeholder="Escribe su nombre" required>
+                  </div>
+
+                  <!-- EDAD -->
+                  <div class="col-6 py-2">
+                      <label for="" class="text-center">Edad</label>
+                      <input type="text" class="form-control" name="Edad" [(ngModel)]="paciente.edad" placeholder="Escribe su edad" required>
+                  </div>
+
+                  <!-- GENERO -->
+                  <div class="col-6 py-2">
+                      <label for="" class="text-center">Genero</label>
+                      <input type="text" class="form-control" name="Genero" [(ngModel)]="paciente.genero" placeholder="Escribe su genero" required>
+                  </div>
+                  <!-- <div class="col-6 py-2">
+                      <label for="" class="text-center">Genero</label>
+                      <select class="form-control" id="sell" name="Genero" [(ngModel)]="paciente.Genero">
+                          <option selected>Femenino</option>
+                          <option>Masculino</option>
+                          <option>Otro</option>
+                      </select>
+                  </div> -->
+
+                  <!-- ALERGIAS -->
+                  <div class="col-6 py-2">
+                      <label for="" class="text-center">Alergias</label>
+                      <input type="text" class="form-control" name="Alergias" [(ngModel)]="paciente.alergias" placeholder="Escribe sus alergias" required>
+                  </div>
+
+                  <hr class="my-4">
+
+                  <!-- SECCION 2 -->
+                  <div class="py-2 text-center">
+                      <p class="lead">Sección 2</p>
+                  </div>
+
+                  <!-- MOTIVO DE CONSULTA -->
+                  <div class="col-6 py-2">
+                      <label for="" class="text-center">Motivo de consulta</label>
+                      <input type="text" class="form-control" name="MotivoDeConsulta" [(ngModel)]="paciente.motivodeconsulta" placeholder="Escribe el motivo de la consulta" required>
+                  </div>
+
+                  <!-- DIAGNOSTICO -->
+                  <div class="col-6 py-2">
+                      <label for="" class="text-center">Diagnostico</label>
+                      <input type="text" class="form-control" name="Diagnostico" [(ngModel)]="paciente.diagnostico" placeholder="Escribe el diagnostico del paciente" required>
+                  </div>
+
+                  <!-- CONDUCTAS ADICTIVAS -->
+                  <div class="col-6 py-2">
+                      <label for="" class="text-center">Conductas adictivas</label>
+                      <input type="text" class="form-control" name="ConductasAdictivas" [(ngModel)]="paciente.conductasadictivas" placeholder="Escribe las conductas adictivas del paciente" required>
+                  </div>
+
+                  <!-- PROBLEMAS DE SALUD -->
+                  <div class="col-6 py-2">
+                      <label for="" class="text-center">Problemas de salud</label>
+                      <input type="text" class="form-control" name="ProblemasDeSalud" [(ngModel)]="paciente.problemasdesalud" placeholder="Escribe los problemas de salud del paciente" required>
+                  </div>
+
+                  <hr class="my-4">
+
+                  <!-- SECCION 3 -->
+                  <div class="py-2 text-center">
+                      <p class="lead">Sección 3</p>
+                  </div>
+
+                  <!-- CODIGO -->
+                  <div class="col-6 py-2">
+                      <label for="" class="text-center">Codigo</label>
+                      <input type="text" class="form-control" name="CodigoDelMedicamento" [(ngModel)]="paciente.codigodelmedicamento" placeholder="Codigo del medicamento" required>
+                  </div>
+
+                  <!-- NOMBRE -->
+                  <div class="col-6 py-2">
+                      <label for="" class="text-center">Nombre</label>
+                      <input type="text" class="form-control" name="NombreDelMedicamento" [(ngModel)]="paciente.nombredelmedicamento" placeholder="Nombre del medicamento" required>
+                  </div>
+
+                  <!-- DOSIS -->
+                  <div class="col-6 py-2">
+                      <label for="" class="text-center">Dosis</label>
+                      <input type="text" class="form-control" name="Dosis" [(ngModel)]="paciente.dosis" placeholder="Dosis del medicamento dado" required>
+                  </div>
+
+                  <!-- DURACION DEL MEDICAMENTO -->
+                  <div class="col-6 py-2">
+                      <label for="" class="text-center">Duracion del medicamento</label>
+                      <input type="text" class="form-control" name="DuracionDelMedicamento" [(ngModel)]="paciente.duraciondelmedicamento" placeholder="Duracion del medicamento dado" required>
+                  </div>
+
+                  <hr class="my-4">
+                  <div class="d-flex justify-content-center">
+                      <button type="submit" class="btn btn-primary" style="width:50%">
+                         <i class="fa fa-save">Registrar</i>
+                      </button>
+                  </div>
+              </div>
+          </form>
+      </main>
+  </div>
+</div>
+</div>
+</div>

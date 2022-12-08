@@ -1,0 +1,96 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 form-wrapper auth my-4 py-4" style="background-color: #F4FEFB;">
+            <h6 class="mb-0 pb-2 text-center"><span>Log In</span> - <span>Sign Up </span></h6>
+            <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
+            <label for="reg-log"></label>
+        <div class="card-3d-wrap mx-auto my-4">
+            <div class="card-3d-wrapper">
+                <!-- LOGIN -->
+                <div class="card-front">
+                    <img class="d-block mx-auto mb-2" src="assets/images/icon.png" alt="logo" width="52" height="52">
+                    <h4 class="text-center form-title">Login</h4>
+                
+                      <form (ngSubmit)="login( f )">
+                     
+                        <span *ngIf="f.submitted && f.controls['email'].errors"
+                        class="text-danger">El correo es obligatorio</span>
+                        <div class="form-group text-center">
+                          <label>Correo electronico</label>
+                          <input type="text" name="email" [(ngModel)]="usuario.email" email class="input100 form-control form-control-lg" placeholder="Email" required>
+                        </div>
+
+                        <span *ngIf="f.submitted && f.controls['password'].errors"
+                        class="text-danger">La contraseña debe de ser más de 6 letras</span>
+                        <div class="form-group text-center" data-validate = "Password is required">
+                          <label>Contraseña</label>
+                          <input type="password" name="password" placeholder="Password" [(ngModel)]="usuario.password" minlength="6" class="form-control form-control-lg" required>
+                        </div>
+
+                        <div class="flex-sb-m w-full p-t-3 p-b-24">
+                          <div class="contact100-form-checkbox">
+                              <input [(ngModel)]="recordar" class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+                              <label class="label-checkbox100" for="ckb1">
+                                  Recordar mi usuario
+                              </label>
+                          </div>
+                        </div> 
+
+                        <br>
+
+                        <div class="form-group text-center">
+                          <button type="submit" name="signUp" style="width:100%" class="btn btn-lg btn-primary">Ingresar</button>                          
+                        </div>
+
+                      </form>
+
+                </div>
+                <!-- SIGNUP -->
+                <div class="card-back">
+                    <img class="d-block mx-auto mb-4" src="assets/images/icon.png" alt="logo" width="52" height="52">
+                    <h4 class="text-center form-title">Sign Up</h4>
+                    <form (ngSubmit)="onSubmit( f )" #f="ngForm">
+                      
+                      <span *ngIf="f.submitted && f.controls['nombre'].errors"
+                      class="text-danger">El nombre es obligatorio</span>
+                      <div class="form-group text-center">
+                          <label>Nombre</label>
+                          <input type="text" name="nombre" [(ngModel)]="usuario.nombre" minlength="2" class="form-control form-control-lg" placeholder="Nombre y apellidos" required>
+                      </div>
+
+                      <span *ngIf="f.submitted && f.controls['email'].errors"
+                      class="text-danger animated fadeIn">El correo es obligatorio</span>
+                      <div class="form-group text-center">
+                          <label>Correo electronico</label>
+                          <input type="email" name="email" [(ngModel)]="usuario.email" class="form-control form-control-lg" placeholder="Email" required>
+                      </div>
+
+                      <span *ngIf="f.submitted && f.controls['password'].errors"
+                      class="text-danger">La contraseña debe de ser más de 6 letras</span>
+                      <div class="form-group text-center">
+                          <label>Contraseña</label>
+                          <input type="password" name="password" [(ngModel)]="usuario.password" minlength="6" class="form-control form-control-lg" placeholder="Password" required>
+                      </div>
+
+                      <div class="flex-sb-m w-full p-t-3 p-b-24">
+                        <div class="contact100-form-checkbox">
+                            <input [(ngModel)]="recordarme" class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+                            <label class="label-checkbox100" for="ckb1">
+                                Recordar mi usuario
+                            </label>
+                        </div>
+                      </div> 
+                      
+
+                      <br>
+                      <div class="form-group text-center">
+                          <button type="submit" name="signUp" style="width:100%" class="btn btn-lg btn-primary">Crear cuenta</button>
+                      </div>
+
+                    </form>
+                    </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
