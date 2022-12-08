@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MenuComponent } from './home/menu/menu.component';
+import { OpRegistroComponent } from './opciones-registro/op-registro/op-registro.component';
 import { LogregComponent } from './usereg/logreg/logreg.component';
 
 const routes: Routes = [
@@ -9,9 +9,17 @@ const routes: Routes = [
     component:LogregComponent
   },
   {
-    path:'menu',
-    component:MenuComponent
+    path:'oppaciente',
+    component:OpRegistroComponent
   }
+  // {
+  //   path:'regmedicamento',
+  //   component:RegMedicamentoComponent
+  // },
+  // {
+  //   path:'opcregistro',
+  //   component:OpcRegistroComponent
+  // }
 ];
 
 @NgModule({

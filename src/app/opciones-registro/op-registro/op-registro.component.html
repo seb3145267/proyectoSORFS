@@ -1,0 +1,33 @@
+<div class="col">
+    <div class="container">
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed btn" data-bs-toggle="collapse" href="#collapse">Paciente</a>
+                </div>
+                <div id="collapse" class="collapse" data-bs-parent="#accordion">
+                    <div class="container">
+                        <!-- INCIO REGISTRO -->
+                        <app-registro-paciente></app-registro-paciente>
+                         <!-- FIN REGISTRO -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed btn" data-bs-toggle="collapse" href="#collapse1">Medicamento</a>
+                </div>
+                <div id="collapse1" class="collapse" data-bs-parent="#accordion">
+                    <div class="container">
+                        <div class="row">
+                            <!-- INCIO REGISTRO -->
+                            <app-registro-medicamento></app-registro-medicamento>
+                            <!-- FIN REGISTRO -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>
